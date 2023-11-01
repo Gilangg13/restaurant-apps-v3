@@ -1,0 +1,24 @@
+{
+  "icons": [
+    {
+      "src": "auto/icon_512x512.07e454194b9700fe3475ca552cf29898.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "auto/icon_192x192.587f506f1692fc0f0e096f5207df9c48.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "name": "Foodie Apps",
+  "short_name": "Foodie",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "/",
+  "description": "The best restaurant in West Java",
+  "background_color": "#c4921a",
+  "theme_color": "#c4921a"
+}
