@@ -56,7 +56,7 @@ describe("Unliking A Restaurant", () => {
     // Hapus dulu restaurant dari daftar restaurant yang disukai
     await FavoriteRestaurantIdb.deleteRestaurant(1);
 
-    // Kemudian, simulasikan pengguna menekan widget batal menyukai restaurant
+    // menekan widget batal menyukai restaurant
     document
       .querySelector('[aria-label="unlike this restaurant"]')
       .dispatchEvent(new Event("click"));
