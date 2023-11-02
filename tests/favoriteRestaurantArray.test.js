@@ -21,7 +21,7 @@ const FavoriteRestaurantArray = {
   },
 
   putRestaurant(restaurant) {
-    if (!restaurant.hasOwnProperty("id")) {
+    if (!Object.prototype.hasOwnProperty.call(restaurant, "id")) {
       return;
     }
 

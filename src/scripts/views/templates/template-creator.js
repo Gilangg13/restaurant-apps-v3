@@ -116,6 +116,7 @@ const createUnlikeRestaurantButtonTemplate = () => `
 
 const createCustomerReviewTemplate = (customerReview) => `
   <article class="review-item">
+    <h4>Review</h4>
     <div class="review-item-header">
       <strong class="review-item-name">${customerReview.name}</strong>
       <span class="review-item-date">${customerReview.date}</span>

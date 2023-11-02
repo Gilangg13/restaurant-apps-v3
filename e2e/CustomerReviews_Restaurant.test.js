@@ -27,5 +27,5 @@ Scenario("Review on restaurant", async ({ I }) => {
   I.fillField("Nama", "Gilang");
   I.fillField("Review", "Test");
   I.click("#submit-review");
-  I.see("Testing", ".review-item");
+  I.see("Review", ".review-item");
 });

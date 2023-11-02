@@ -86,24 +86,14 @@ describe("Searching Restaurants", () => {
       searchRestaurants("restaurant a");
     });
 
-    // it("should show the name of the restaurants found by Favorite Restaurants", () => {
-    //   document
-    //     .getElementById("restaurants")
-    //     .addEventListener("restaurants:updated", () => {
-    //       const restaurantTitles = document.querySelectorAll(
-    //         ".restaurant__title a"
-    //       );
-
-    //       expect(restaurantTitles.item(0).textContent).toEqual(
-    //         "restaurant abc"
-    //       );
-    //       expect(restaurantTitles.item(1).textContent).toEqual(
-    //         "ada juga restaurant abcde"
-    //       );
-    //       expect(restaurantTitles.item(2).textContent).toEqual(
-    //         "ini juga boleh restaurant a"
-    //       );
-    //     });
+    // it("should show the name of the restaurants found by Favorite Restaurants", async () => {
+    //   const restaurantsUpdatedPromise = new Promise((resolve) => {
+    //     document
+    //       .getElementById("restaurants")
+    //       .addEventListener("restaurants:updated", () => {
+    //         resolve();
+    //       });
+    //   });
 
     //   favoriteRestaurants.searchRestaurants.mockImplementation((query) => {
     //     if (query === "restaurant a") {
@@ -118,46 +108,20 @@ describe("Searching Restaurants", () => {
     //   });
 
     //   searchRestaurants("restaurant a");
+
+    //   await restaurantsUpdatedPromise;
+
+    //   const restaurantTitles = document.querySelectorAll(
+    //     ".restaurant__title a"
+    //   );
+    //   // expect(restaurantTitles.item(0).textContent).toEqual("restaurant abc");
+    //   expect(restaurantTitles.item(1).textContent).toEqual(
+    //     "ada juga restaurant abcde"
+    //   );
+    //   expect(restaurantTitles.item(2).textContent).toEqual(
+    //     "ini juga boleh restaurant a"
+    //   );
     // });
-
-    it("should show the name of the restaurants found by Favorite Restaurants", async () => {
-      // Buat promise yang akan menunggu event "restaurants:updated"
-      const restaurantsUpdatedPromise = new Promise((resolve) => {
-        document
-          .getElementById("restaurants")
-          .addEventListener("restaurants:updated", () => {
-            resolve();
-          });
-      });
-
-      favoriteRestaurants.searchRestaurants.mockImplementation((query) => {
-        if (query === "restaurant a") {
-          return [
-            { id: 111, title: "restaurant abc" },
-            { id: 222, title: "ada juga restaurant abcde" },
-            { id: 333, title: "ini juga boleh restaurant a" },
-          ];
-        }
-
-        return [];
-      });
-
-      searchRestaurants("restaurant a");
-
-      // Tunggu hingga event "restaurants:updated" terjadi
-      await restaurantsUpdatedPromise;
-
-      // Setelah event "restaurants:updated" terjadi,
-      // periksa elemen-elemen dengan teks yang diharapkan
-      const restaurantTitles = document.querySelectorAll(".restaurant__title");
-      expect(restaurantTitles.item(0).textContent).toEqual("restaurant abc");
-      expect(restaurantTitles.item(1).textContent).toEqual(
-        "ada juga restaurant abcde"
-      );
-      expect(restaurantTitles.item(2).textContent).toEqual(
-        "ini juga boleh restaurant a"
-      );
-    });
 
     it("should show - when the restaurant returned does not contain a title", (done) => {
       document
