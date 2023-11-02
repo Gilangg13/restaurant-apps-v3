@@ -25,6 +25,10 @@ const FavoriteRestaurantIdb = {
   },
 
   async putRestaurant(restaurant) {
+    if (!restaurant.hasOwnProperty("id")) {
+      return;
+    }
+
     return (await dbPromise).put(OBJECT_STORE_NAME, restaurant);
   },
 
