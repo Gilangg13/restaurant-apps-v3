@@ -37,7 +37,6 @@ describe("Liking A Restaurant", () => {
   it("should be able to like the restaurant", async () => {
     await TestFactories.createLikeButtonPresenterWithRestaurant({ id: 1 });
 
-    // menyimulasikan widget ditekan
     document.querySelector("#likeButton").dispatchEvent(new Event("click"));
 
     // memastikan restaurant berhasil disukai
@@ -53,7 +52,7 @@ describe("Liking A Restaurant", () => {
     // Tambahkan film dengan ID 1 ke daftar film yang disukai
     await FavoriteRestaurantIdb.putRestaurant({ id: 1 });
 
-    // Simulasikan pengguna menekan tombol suka film
+    // menekan tombol suka film
     document.querySelector("#likeButton").dispatchEvent(new Event("click"));
 
     expect(await FavoriteRestaurantIdb.getAllRestaurants()).toEqual([
